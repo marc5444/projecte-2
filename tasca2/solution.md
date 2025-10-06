@@ -1,81 +1,155 @@
-# ⚡ Solució Tasca 2 — Estudi i Tria d’un SAI (TecnoGestió S.L.)
+Informe tècnic: Estudi i selecció d’un SAI per a TecnoGestió S.L.
+1. Inventari d’equips
+Dispositius que es connectaran al SAI:
+4 ordinadors de sobretaula + monitors (imprescindibles per al treball diari).
 
-## 1️⃣ Inventari d’equips
 
-| Dispositiu | Quantitat | Connexió al SAI (Sí/No) | Justificació |
-|------------|-----------|-------------------------|-------------|
-| PC | 4 | Sí | Equip essencial per treballar i guardar dades. |
-| Monitor | 4 | Sí | Necessari per poder continuar treballant durant tall. |
-| Router WiFi | 1 | Sí | Manté connectivitat per accedir a serveis i dades remotes. |
-| Impressora multifunció | 1 | No | Alt consum i no essencial durant tall de llum. |
+1 router d’accés a Internet (per garantir connexió mentre es fa el tancament de tasques).
 
----
 
-## 2️⃣ Especificacions tècniques
+1 impressora-fotocopiadora multifunció → No es connectarà al SAI.
 
-| Dispositiu | Model/Referència | Consum (W) | Consum (VA) |
-|------------|-----------------|------------|--------------|
-| PC | HP ProDesk 400 G6 | 150 W | 200 VA |
-| Monitor | Dell P2419H | 25 W | 30 VA |
-| Router WiFi | TP-Link Archer C6 | 15 W | 20 VA |
 
-> 💡 *Nota: VA calculat amb factor de potència aproximat 0,75.*
+Justificació: Les impressores làser/multifunció tenen un consum molt alt en el moment d’impressió (picos > 1000 W) i no són crítiques en cas de tall elèctric. El SAI es destinarà a mantenir els equips de treball i la xarxa actius uns minuts per poder desar i apagar correctament.
 
----
 
-## 3️⃣ Càlcul de potència total
 
-| Dispositiu | Quantitat | Potència (VA) | Total (VA) |
-|------------|-----------|---------------|------------|
-| PC | 4 | 200 | 800 |
-| Monitor | 4 | 30 | 120 |
-| Router | 1 | 20 | 20 |
-| **Total** |  |  | **940 VA** |
+2. Especificacions dels dispositius
+Dispositiu
+Model aproximat
+Consum (W)
+Consum (VA)
+PC sobretaula (ofimàtica, CPU i placa base)
+Dell OptiPlex 7010
+   200 W
+    250 VA
+Monitor LED 24’’
+Dell P2419H
+    30 W
+   40 VA
+Router (tipus SOHO)
+TP-Link Archer AX20
+     15 W
+    20 VA
 
-**Marge de seguretat del 20%:** 940 × 0,20 = 188 VA  
-**Potència final recomanada:** 940 + 188 ≈ **1.128 VA**  
+Càlcul per unitat PC+monitor:
+ 200 W + 30 W = 230 W (≈ 290 VA).
+Total per 4 ordinadors amb monitors:
+ 4 × 230 W = 920 W (≈ 1160 VA).
+Router: 15 W (20 VA).
+TOTAL:
+Potència activa (W): 935 W
 
-> ✅ Requisit mínim del SAI: **≥1.200 VA**
 
----
+Potència aparent (VA): 1180 VA
 
-## 4️⃣ Determinació de l’autonomia
 
-- **Autonomia mínima requerida:** 10 minuts  
-- **Justificació:** Permet desar treballs, tancar aplicacions i apagar correctament els equips sense perdre dades.
 
----
+3. Càlcul de potència amb reserva
+Es recomana afegir un 20% de marge de seguretat:
+W totals amb marge = 935 × 1,2 = 1122 W
 
-## 5️⃣ Models de SAI analitzats
 
-| Marca i model | Potència (VA/W) | Autonomia (min) | Nombre de preses | Preu (€) | Observacions |
-|---------------|----------------|-----------------|-----------------|-----------|--------------|
-| APC Back-UPS BX1400U-GR | 1400 VA / 700 W | 8–10 | 6 Schuko | 160 € | Marca fiable, bona relació qualitat/preu |
-| Eaton Ellipse ECO 1200 USB | 1200 VA / 750 W | 10–12 | 4 Schuko + USB | 180 € | Protecció de línia telefònica, port USB de gestió |
-| Salicru SPS SOHO+ 1600 | 1600 VA / 960 W | 10–15 | 6 Schuko | 210 € | Més potència i autonomia, ideal per ampliacions futures |
+VA totals amb marge = 1180 × 1,2 = 1416 VA
 
----
 
-## 6️⃣ Comparació i selecció final
+Per tant, necessitem un SAI d’almenys 1500 VA i 1100 W.
 
-| Característica | APC BX1400U | Eaton ECO 1200 | Salicru SPS 1600 |
-|----------------|--------------|----------------|-----------------|
-| Potència (VA/W) | 1400 / 700 | 1200 / 750 | 1600 / 960 |
-| Autonomia (min) | 8–10 | 10–12 | 10–15 |
-| Nombre de preses | 6 | 4 | 6 |
-| Preu (€) | 160 | 180 | 210 |
-| Funcions addicionals | Protecció línia | Port USB, línia telefònica | Protecció línia, escalable |
+4. Determinació de l’autonomia
+Objectiu: mantenir funcionament mínim de 10 minuts per desar i apagar.
+ Per una càrrega d’uns 900–1000 W, buscarem SAIs que ofereixin 10–15 minuts d’autonomia en aquest rang.
 
-### 🏆 Selecció final
-- **Model seleccionat:** Salicru SPS SOHO+ 1600 VA / 960 W  
-- **Justificació:** Proporciona **suficient potència** amb marge de seguretat, **autonomia adequada** (10–15 min), suficients preses per tots els equips essencials i possibilitat d’ampliació futura. Tot i ser una mica més car, és la millor opció per la fiabilitat i escalabilitat.
+5. Models de SAI analitzats
+🔹 Eaton 5SC 1500i
+Potència: 1500 VA / 1050 W
 
----
 
-## 7️⃣ Annexos / Imatges
+Autonomia: ~10 minuts al 50% de càrrega (més curta al 100%)
 
-Afegir captures dels models de SAI i altres recursos visuals dins la carpeta `img/`. Exemple Markdown per afegir imatge:
 
-```markdown
-![SAI Salicru SPS SOHO+](./img/salicru_sps.png "SAI Salicru SPS SOHO+ 1600 VA")
+Sortides: 8 preses IEC C13
+
+
+Preu: ~400 €
+
+
+Marca fiable, orientada a pimes.
+
+
+
+🔹 APC Back-UPS Pro BR1500G
+Potència: 1500 VA / 865 W
+
+
+Autonomia: ~13 min al 50% de càrrega
+
+
+Sortides: 6 schuko
+
+
+Preu: ~350 €
+
+
+Marca molt reconeguda, però pot quedar curta en W (865 W < 935 W necessaris).
+
+
+
+🔹 Salicru SPS SOHO+ 1600VA
+Potència: 1600 VA / 960 W
+
+
+Autonomia: 12 min al 50% de càrrega
+
+
+Sortides: 4 schuko + USB de gestió
+
+
+Preu: ~300 €
+
+
+Fabricant estatal, bon preu/prestacions, suficient per a la càrrega real (935 W ≈ límit).
+
+
+
+
+
+
+6. Comparació resumida
+Model
+VA/W
+Autonomia
+Preu aprox.
+Observacions
+Eaton 5SC 1500i
+1500 / 1050
+~10 min
+400 €
+Seguretat, professional
+APC BR1500G
+1500 / 865
+~13 min
+350 €
+Marca top, però pot quedar curta en W
+Salicru SPS SOHO+ 1600
+1600 / 960
+~12 min
+300 €
+Bona relació qualitat-preu
+
+
+7. Selecció final i justificació
+Es recomana el Eaton 5SC 1500i per aquests motius:
+Supera els requisits de potència (1050 W > 935 W + marge).
+
+
+Marca de confiança amb bona gestió i fiabilitat.
+
+
+Permet assegurar els 10 minuts mínims d’autonomia amb càrrega propera al 80%.
+
+
+Alternativa més econòmica: Salicru SPS SOHO+ 1600VA, vàlida si el pressupost és molt ajustat, però amb menor marge de seguretat.
+
+ Conclusió: Per garantir continuïtat de servei i protecció dels equips, es recomana la compra del SAI Eaton 5SC 1500i.
+
 
