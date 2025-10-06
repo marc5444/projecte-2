@@ -1,4 +1,4 @@
-# ⚡ Informe tècnic: Estudi i selecció d’un SAI per a TecnoGestió S.L.
+# ⚡ Solució Tasca 2 — Estudi i selecció d’un SAI per a TecnoGestió S.L.
 
 ## 1️⃣ Inventari d’equips
 
@@ -105,5 +105,3 @@ Per garantir **continuïtat de servei** i **protecció dels equips**, es recoman
 📄 **Autor/a:** *[El teu nom]*  
 📅 **Data:** *Octubre 2025*  
 🏢 **Projecte:** EverPia – Tasca 2: Tria SAI per a TecnoGestió S.L.
-
-
